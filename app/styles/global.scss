@@ -1,0 +1,131 @@
+@use "variables" as v;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  color: #ffffff;
+}
+
+body {
+  background-color: #000000 !important;
+  padding: 0 20px 40px;
+
+  @media (min-width: 1200px) {
+    padding: 0 60px 40px;
+  }
+}
+
+@mixin door {
+  position: fixed;
+  top: 0;
+  width: 50vw;
+  height: 100vh;
+  background-color: #000000;
+  z-index: 10;
+  animation-duration: 2s;
+  animation-delay: 2.2s;
+  animation-fill-mode: forwards;
+}
+
+.generalContainer {
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+.leftDoor {
+  @include door;
+  animation-name: leftDoorHide;
+  left: 0;
+}
+
+.rightDoor {
+  @include door;
+  animation-name: rightDoorHide;
+  right: 0;
+}
+
+@keyframes leftDoorHide {
+  0% {
+    left: 0;
+  }
+
+  100% {
+    left: -50vw;
+  }
+}
+
+@keyframes rightDoorHide {
+  0% {
+    right: 0;
+  }
+
+  100% {
+    right: -50vw;
+  }
+}
+
+.loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 22px;
+  border-radius: 20px;
+  color: v.$violet;
+  border: 2px solid;
+  z-index: 20;
+  animation: hideLoader 1s forwards 2s;
+}
+
+.loader::before {
+  content: "";
+  position: absolute;
+  margin: 2px;
+  inset: 0 100% 0 0;
+  border-radius: inherit;
+  background: currentColor;
+  animation: load 2s forwards;
+}
+
+@keyframes hideLoader {
+  0% {
+    opacity: 1;
+  }
+
+  66% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes load {
+  100% {
+    inset: 0;
+  }
+}
+
+.show {
+  animation-name: showAnimation;
+  animation-duration: 1s;
+  animation-delay: 0.4s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes showAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

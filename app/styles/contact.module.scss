@@ -1,0 +1,106 @@
+@use "variables" as v;
+
+@mixin input($width) {
+  border-radius: 16px;
+  outline: none;
+  border: none;
+  padding: 11px 21px;
+  background-color: #101010;
+  font-size: 16px;
+  font-weight: 400;
+  width: $width;
+}
+
+.container {
+  opacity: 0;
+
+  @media (min-width: 810px) {
+    width: 675px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 810px) {
+    width: 785px;
+  }
+
+  h2 {
+    margin-bottom: 24px;
+    font-size: 32px;
+    font-weight: 400;
+
+    @media (min-width: 810px) {
+      font-weight: 500;
+      text-align: center;
+      font-size: 48px;
+    }
+
+    @media (min-width: 1200px) {
+      font-size: 64px;
+    }
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    div {
+      display: flex;
+      justify-content: space-between;
+
+      .name {
+        @include input(48%);
+      }
+
+      .email {
+        @include input(48%);
+        margin-left: auto;
+      }
+    }
+
+    textarea {
+      @include input(100%);
+      font-family: inherit;
+      height: 175px;
+      resize: none;
+    }
+
+    button {
+      border-radius: 16px;
+      width: 100%;
+      padding: 11px 21px;
+      outline: none;
+      border: none;
+      background-color: v.$violet;
+      font-size: 16px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+
+      &.sent {
+        .send {
+          display: block;
+          transition: 0.5s;
+          transform: translateY(-40px);
+        }
+
+        .thankYou {
+          transition: 1s;
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+
+      .thankYou {
+        position: absolute;
+        top: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    .inputError {
+      box-shadow: #ed2121 0px 0px 0px 1px inset;
+    }
+  }
+}

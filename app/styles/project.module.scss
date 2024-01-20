@@ -1,0 +1,135 @@
+@use "variables" as v;
+
+.container {
+  padding-top: 80px;
+
+  @media (min-width: 810px) {
+    width: 600px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 1200px) {
+    width: auto;
+    padding: 80px 10px 0;
+    max-width: 1360px;
+  }
+
+  @media (min-width: 1440px) {
+    padding: 80px 0 0;
+  }
+
+  h2 {
+    font-size: 32px;
+    text-align: center;
+    font-weight: 500;
+
+    @include v.basicAnimation(0);
+
+    @media (min-width: 810px) {
+      font-size: 48px;
+    }
+
+    @media (min-width: 1200px) {
+      font-size: 64px;
+    }
+  }
+
+  .subtitle {
+    font-size: 14px;
+    text-align: center;
+    color: #999999;
+    margin-top: 10px;
+
+    @include v.basicAnimation(0.1s);
+
+    @media (min-width: 810px) {
+      font-size: 16px;
+    }
+
+    @media (min-width: 1200px) {
+      font-size: 17px;
+    }
+  }
+
+  .image,
+  .imageAnimated {
+    border-radius: 16px;
+    aspect-ratio: 1.42 / 1;
+    border-radius: 16px;
+    margin: 48px 0;
+    background: radial-gradient(
+        circle at 50% 50%,
+        #a7a7a7 0%,
+        rgba(0, 0, 0, 1) 100%
+      )
+      50% 50%;
+  }
+
+  .imageAnimated {
+    @include v.basicAnimation(0.2s);
+  }
+
+  .contentContainer {
+    @media (min-width: 1200px) {
+      width: 700px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 1440px) {
+      width: 800px;
+    }
+
+    .problemContainer {
+      opacity: 0;
+    }
+
+    .animatedContainer {
+      @include v.basicAnimation(0.3s);
+    }
+  }
+
+  .typography {
+    font-size: 16px;
+    color: #ffffff80;
+    font-weight: 300;
+    line-height: 27px;
+
+    @media (min-width: 810px) {
+      font-size: 17px;
+      line-height: 26px;
+    }
+  }
+
+  h5 {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 30px 0 10px;
+
+    @media (min-width: 810px) {
+      font-size: 24px;
+    }
+  }
+
+  .stackContainer {
+    display: flex;
+    gap: 20px;
+
+    @media (min-width: 810px) {
+      gap: 25px;
+    }
+  }
+
+  h3 {
+    font-size: 32px;
+    font-weight: 500;
+    margin: 30px 0;
+
+    @media (min-width: 810px) {
+      font-size: 38px;
+    }
+
+    @media (min-width: 1200px) {
+      font-size: 48px;
+    }
+  }
+}

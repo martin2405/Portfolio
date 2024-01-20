@@ -1,0 +1,60 @@
+@use "variables" as v;
+
+@mixin shadow($direction) {
+  position: absolute;
+  top: 0;
+  width: 60px;
+  height: 100%;
+  content: "";
+  z-index: 1;
+  background: linear-gradient($direction, #ffffff00, #000000);
+
+  @media (min-width: 1200px) {
+    width: 240px;
+  }
+}
+
+.container {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+
+  @include v.basicAnimation(2.2s);
+
+  &::before {
+    @include shadow(to left);
+    left: -10px;
+  }
+
+  &::after {
+    @include shadow(to right);
+    right: -10px;
+  }
+
+  div {
+    display: inline-block;
+    animation: 30s slide infinite linear;
+
+    svg {
+      margin: 0 40px;
+
+      @media (min-width: 810px) {
+        margin: 0 60px;
+      }
+
+      @media (min-width: 1440px) {
+        margin: 0 80px;
+      }
+    }
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}

@@ -1,0 +1,21 @@
+$violet: #7218e5;
+
+@mixin basicAnimation($delay) {
+  animation-name: showAnimation;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-delay: $delay;
+  opacity: 0;
+}
+
+@keyframes showAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,105 @@
+.listContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  margin: 96px 0;
+  opacity: 0;
+
+  @media (min-height: 720px) {
+    animation-delay: 2.4s;
+  }
+
+  @media (min-width: 810px) {
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}
+
+.container {
+  transition: 0.3s;
+
+  &:active,
+  &:hover {
+    scale: 0.95;
+  }
+
+  @media (min-width: 810px) {
+    flex-basis: 48%;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .title {
+    font-size: 20px;
+    font-weight: 500;
+
+    @media (min-width: 810px) {
+      display: none;
+    }
+  }
+
+  .subtitle {
+    font-size: 14px;
+    color: #9a9a9a;
+    margin: 7px 0 24px 0;
+
+    @media (min-width: 810px) {
+      display: none;
+    }
+  }
+
+  .image {
+    aspect-ratio: 1.56 / 1;
+    border-radius: 16px;
+    background: radial-gradient(
+        circle at 50% 50%,
+        #a7a7a7 0%,
+        rgba(0, 0, 0, 1) 100%
+      )
+      50% 50%;
+    position: relative;
+
+    @media (min-width: 810px) {
+      aspect-ratio: 1.675 / 1;
+    }
+
+    .floatingContainer {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      display: none;
+
+      @media (min-width: 810px) {
+        display: block;
+      }
+
+      @media (min-width: 1200px) {
+        top: auto;
+        bottom: 20px;
+        left: 16px;
+      }
+
+      .floatingTitle {
+        font-size: 21px;
+        font-weight: 500;
+      }
+
+      .floatingSubtitle {
+        font-size: 16px;
+        color: #9a9a9a;
+        margin-top: 5px;
+      }
+    }
+
+    .inProgress {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
