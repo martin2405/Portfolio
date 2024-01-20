@@ -33,25 +33,25 @@ export interface ProjectsDataType {
 
 export const projectsData: ProjectsDataType[] = [
   {
-    title: "Xyz",
+    title: "Xyz1",
     subtitle: "xyz (2024)",
     primaryImageUrl: "",
     stack: ["nextjs", "antd", "firebase"],
   },
   {
-    title: "Xyz",
+    title: "Xyz2",
     subtitle: "xyz (2024)",
     primaryImageUrl: "",
     stack: ["react-native", "mongodb", "firebase"],
   },
   {
-    title: "Xyz",
+    title: "Xyz3",
     subtitle: "xyz (2024)",
     primaryImageUrl: "",
     stack: ["nextjs", "antd", "firebase"],
   },
   {
-    title: "Xyz",
+    title: "Xyz4",
     subtitle: "xyz (2024)",
     primaryImageUrl: "",
     stack: ["nextjs", "antd", "firebase"],
