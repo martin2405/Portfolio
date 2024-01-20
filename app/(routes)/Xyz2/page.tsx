@@ -1,19 +1,11 @@
 "use client";
-import {
-  ProjectsDataType,
-  projectsData,
-  skillsAssets,
-} from "@/constants/projectsData";
+import { projectsData, skillsAssets } from "@/constants/projectsData";
 import styles from "@/styles/project.module.scss";
 import { showAnimation } from "@/utils/showAnimation";
 import { notFound } from "next/navigation";
 import { useInView } from "react-intersection-observer";
 
-interface ProjectProps {
-  params: { project: ProjectsDataType["title"] };
-}
-
-export default function Project({ params }: ProjectProps) {
+export default function Project() {
   const { ref: refProblem, inView: inViewProblem } = useInView({
     triggerOnce: true,
   });
@@ -27,9 +19,7 @@ export default function Project({ params }: ProjectProps) {
     triggerOnce: true,
   });
 
-  const project = projectsData.find(
-    (project) => project.title === params.project
-  );
+  const project = projectsData.find((project) => project.title === "Xyz2");
 
   if (!project) {
     notFound();
