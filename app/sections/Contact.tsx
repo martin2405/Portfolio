@@ -9,29 +9,31 @@ import styles from "@/styles/contact.module.scss";
 import { useInView } from "react-intersection-observer";
 import { showAnimation } from "@/utils/showAnimation";
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
+
+emailjs.init({
+  publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+});
 
 export default function Contact() {
   const { ref, inView } = useInView({ triggerOnce: true });
   const [isSent, setIsSent] = useState(false);
 
   const onSubmit = (
-    { name, email, message }: ContactValuesType,
+    params: ContactValuesType,
     formikHelpers: FormikHelpers<ContactValuesType>
   ) => {
-    fetch("https://formsubmit.co/44926ca8d42813366b3f3e3b821bed55", {
-      method: "POST",
-      body: JSON.stringify({
-        name,
-        email,
-        message,
-      }),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
+    emailjs.send("default_service", "template_82za21q", params).then(
+      (response) => {
+        if (response.status === 200) {
+          formikHelpers.resetForm();
+          setIsSent(true);
+        }
       },
-    });
-
-    formikHelpers.resetForm();
-    setIsSent(true);
+      (error) => {
+        console.log("FAILED...", error);
+      }
+    );
   };
 
   return (
