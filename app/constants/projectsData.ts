@@ -1,14 +1,26 @@
-import Antd from "../../public/ant-design.svg";
-import Cypress from "../../public/cypress.svg";
-import Firebase from "../../public/firebase.svg";
-import Javascript from "../../public/javascript.svg";
-import Mui from "../../public/material-ui.svg";
-import MongoDB from "../../public/mongodb.svg";
-import Nextjs from "../../public/nextjs.svg";
-import ReactNative from "../../public/react-native.svg";
-import React from "../../public/react.svg";
-import Sass from "../../public/sass.svg";
-import Typescript from "../../public/typescript.svg";
+import Antd from "../../public/icons/ant-design.svg";
+import Cypress from "../../public/icons/cypress.svg";
+import Firebase from "../../public/icons/firebase.svg";
+import Javascript from "../../public/icons/javascript.svg";
+import Mui from "../../public/icons/material-ui.svg";
+import MongoDB from "../../public/icons/mongodb.svg";
+import Nextjs from "../../public/icons/nextjs.svg";
+import ReactNative from "../../public/icons/react-native.svg";
+import React from "../../public/icons/react.svg";
+import Sass from "../../public/icons/sass.svg";
+import Typescript from "../../public/icons/typescript.svg";
+import Storybook from "../../public/icons/storybook.svg";
+import Nodejs from "../../public/icons/nodejs.svg";
+import Nestjs from "../../public/icons/nestjs.svg";
+import Stopwatch from "../../public/images/stopwatch.png";
+import Calculator from "../../public/images/calculator.png";
+import ToDoList from "../../public/images/to-do-list.png";
+import Jackpot from "../../public/images/jackpot.png";
+import LightningProxy from "../../public/images/lightning-proxy.png";
+import SneakersShop from "../../public/images/sneakers-shop.png";
+import GamesLibrary from "../../public/images/games-library.png";
+import Portfolio from "../../public/images/portfolio.png";
+import { StaticImageData } from "next/image";
 
 export const skillsAssets = {
   javascript: Javascript,
@@ -22,38 +34,65 @@ export const skillsAssets = {
   nextjs: Nextjs,
   cypress: Cypress,
   sass: Sass,
+  storybook: Storybook,
+  nodejs: Nodejs,
+  nestjs: Nestjs,
 };
 
 export interface ProjectsDataType {
   title: string;
-  subtitle: string;
-  primaryImageUrl: string;
-  stack: (keyof typeof skillsAssets)[];
+  primaryImage: StaticImageData;
+  webLink: string;
+  githubLink: string;
 }
 
 export const projectsData: ProjectsDataType[] = [
   {
-    title: "Xyz1",
-    subtitle: "xyz (2024)",
-    primaryImageUrl: "",
-    stack: ["nextjs", "antd", "firebase"],
+    title: "Portfolio (2024)",
+    primaryImage: Portfolio,
+    webLink: "https://martin2405.github.io/Portfolio",
+    githubLink: "https://github.com/martin2405/Portfolio",
   },
   {
-    title: "Xyz2",
-    subtitle: "xyz (2024)",
-    primaryImageUrl: "",
-    stack: ["react-native", "mongodb", "firebase"],
+    title: "Sneakers Shop (2021)",
+    primaryImage: SneakersShop,
+    webLink: "https://martin2405.github.io/Sneakers-Shop",
+    githubLink: "https://github.com/martin2405/Sneakers-Shop",
   },
   {
-    title: "Xyz3",
-    subtitle: "xyz (2024)",
-    primaryImageUrl: "",
-    stack: ["nextjs", "antd", "firebase"],
+    title: "Games Library (2021)",
+    primaryImage: GamesLibrary,
+    webLink: "https://martin2405.github.io/Games-Library",
+    githubLink: "https://github.com/martin2405/Games-Library",
   },
   {
-    title: "Xyz4",
-    subtitle: "xyz (2024)",
-    primaryImageUrl: "",
-    stack: ["nextjs", "antd", "firebase"],
+    title: "Lightning Proxy (2021)",
+    primaryImage: LightningProxy,
+    webLink: "https://martin2405.github.io/LightningProxy",
+    githubLink: "https://github.com/martin2405/LightningProxy",
+  },
+  {
+    title: "Jackpot (2021)",
+    primaryImage: Jackpot,
+    webLink: "https://martin2405.github.io/Jackpot",
+    githubLink: "https://github.com/martin2405/Jackpot",
+  },
+  {
+    title: "Stopwatch (2021)",
+    primaryImage: Stopwatch,
+    webLink: "https://martin2405.github.io/stoper",
+    githubLink: "https://github.com/martin2405/stoper",
+  },
+  {
+    title: "Calculator (2021)",
+    primaryImage: Calculator,
+    webLink: "https://martin2405.github.io/kalkulator",
+    githubLink: "https://github.com/martin2405/kalkulator",
+  },
+  {
+    title: "To Do List (2021)",
+    primaryImage: ToDoList,
+    webLink: "https://martin2405.github.io/ToDoList",
+    githubLink: "https://github.com/martin2405/ToDoList",
   },
 ];

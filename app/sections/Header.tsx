@@ -11,7 +11,7 @@ export default function Header() {
       </div>
       <div className={styles.titlesContainer}>
         <h1>Hey, I&apos;m Marcin</h1>
-        <h1>I&apos;m a Frontend Developer</h1>
+        <h1>I&apos;m a Fullstack Developer</h1>
       </div>
       <p className={styles.quote}>
         The wisest is the one who knows what he does not know <br /> I like
